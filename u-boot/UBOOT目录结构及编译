@@ -14,3 +14,16 @@ Dtt----通用----数字温度测量器或者传感器的驱动。
 examples----应用例程----一些独立运行的应用程序的例子，例如helloworld。
 tools----工具----存放制作S-record或者U-boot格式的映像等工具，例如mkimage。
 DOC---文档----开发使用文档。
+
+UBOOT的编译方法
+  1、编译现有的，比如本UBOOT源码已经有smdk2410_config
+    make smdk2410_config
+    make
+    这样就能编译出对应的uboot.bin。
+  2、编译没有的，需要新添加配置文件。
+    a.在board文件夹下面新建配置文件，比如我的是samsung的，所以在board/samsung/，新建my2440文件加，添加对应的配置文件，修改对应的makefile。
+    b.回到UBOOT根目录，修改Makefile，模仿mini2440_config改写。
+    c.make my2440_config
+    d.make
+    然后编译OK。
+    
